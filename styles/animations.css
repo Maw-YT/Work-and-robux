@@ -1,0 +1,46 @@
+@keyframes aiButtonClick {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  50% {
+    transform: scale(0.90);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+}
+
+.ai-click-animation {
+  animation: aiButtonClick 0.9s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-click-animation::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1);
+  animation: aiClickRipple 0.6s ease-out;
+}
+
+@keyframes aiClickRipple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(40);
+    opacity: 0;
+  }
+}
+

@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work and Robux</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/theme-switch.css">
+  <link rel="stylesheet" href="styles/buttons.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/sidebars.css">
+  <link rel="stylesheet" href="styles/modal.css">
+  <link rel="stylesheet" href="styles/cursor.css">
+  <link rel="stylesheet" href="styles/console.css">
+  <link rel="stylesheet" href="styles/battle.css">
+  <link rel="stylesheet" href="styles/speech-bubbles.css">
+</head>
+<body>
+  <audio id="backgroundMusic" loop>
+    <source src="minecraft.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="progressSidebar" class="left-sidebar">
+    <h2>Progress</h2>
+    <div class="button-group">
+      <button id="loadProgressButton">Load Progress</button>
+      <button id="saveProgressButton">Save Progress</button>
+    </div>
+  </div>
+
+  <div id="creditsDialog" class="modal">
+    <div class="modal-content">
+      <span class="close-credits">&times;</span>
+      <h2>Credits</h2>
+      <p>Game Developer: Maw</p>
+      <p>Music: Minecraft Soundtrack</p>
+      <p>Sound Effects: Various Click Sounds</p>
+      <p>Special Thanks to @ecrnxq07 for the Custom Game Idea</p>
+    </div>
+  </div>
+
+  <div id="customGameDialog" class="modal">
+    <div class="modal-content">
+      <span class="close-custom-game">&times;</span>
+      <h2>Custom Game Settings</h2>
+      <div class="custom-game-options">
+        <label for="startingMoney">Starting Money:</label>
+        <input type="number" id="startingMoney" value="0" min="0">
+        
+        <label for="startingRobux">Starting Robux:</label>
+        <input type="number" id="startingRobux" value="0" min="0">
+        
+        <label for="workMultiplier">Work Multiplier:</label>
+        <input type="number" id="workMultiplier" value="1" min="1">
+        
+        <label for="workUpgradeCost">Work Upgrade Cost:</label>
+        <input type="number" id="workUpgradeCost" value="5500" min="1">
+        
+        <div class="cpu-mode-option">
+          <input type="checkbox" id="startInCPUMode">
+          <label for="startInCPUMode">Start in CPU Mode</label>
+        </div>
+        
+        <label for="cpuSpeedSlider">CPU Mode Speed: <span id="cpuSpeedDisplay">60%</span></label>
+        <input type="range" id="cpuSpeedSlider" min="100" max="900" value="600" step="50">
+        
+        <button id="startCustomGameButton">Start Custom Game</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="startMenu" class="container">
+    <h1>Work and Robux</h1>
+    <button id="singlePlayerBtn">Single Player</button>
+    <button id="singleCPUBtn">CPU</button>
+    <button id="customGameBtn">Custom Game</button>
+    <button id="creditsBtn">Credits</button>
+    <button id="themeSwitchButton"><span>Switch Theme</span></button>
+  </div>
+
+  <div id="gameContainer" class="container" style="display: none;">
+    <div id="shopSidebar">
+      <h2>Shop</h2>
+      <div class="shop-items">
+        <div class="shop-item" data-item="dominus">
+          <img src="dominus.png" alt="Dominus">
+          <h3>Dominus</h3>
+          <p>Price: 50,000 Robux</p>
+          <div class="shop-item-buttons">
+            <button class="buy-item">Buy</button>
+            <button class="sell-item" style="display: none;">Sell</button>
+          </div>
+        </div>
+        <div class="shop-item" data-item="dragon">
+          <img src="Dragon_Fruit.png" alt="Dragon">
+          <h3>Dragon</h3>
+          <p>Price: 25,000 Robux</p>
+          <div class="shop-item-buttons">
+            <button class="buy-item">Buy</button>
+            <button class="sell-item" style="display: none;">Sell</button>
+          </div>
+        </div>
+        <div class="shop-item" data-item="hat">
+          <img src="hat.png" alt="Hat">
+          <h3>Hat</h3>
+          <p>Price: 10,000 Robux</p>
+          <div class="shop-item-buttons">
+            <button class="buy-item">Buy</button>
+            <button class="sell-item" style="display: none;">Sell</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="backToMenuButton"> Back to Menu</button>
+    <button id="themeSwitchButton"><span>Switch Theme</span></button>
+    <button id="musicToggleButton"> Toggle Music</button>
+    <div class="money-display">Money: $<span id="moneyAmount">0</span></div>
+    <div class="robux-display">Robux: <span id="robuxAmount">0</span></div>
+    <button id="workButton">Work (Earn $1)</button>
+    <button id="robuxButton">550 Robux (5 money)</button>
+    <button id="robux1100Button">1100 Robux (10 money)</button>
+    <button id="robux2200Button">2200 Robux (20 money)</button>
+    <button id="robux5800Button">5800 Robux (50 money)</button>
+    <button id="robux12100Button">12100 Robux (100 money)</button>
+    <button id="robux26400Button">26400 Robux (200 money)</button>
+    <button id="workUpgradeButton">Upgrade Work (5500 Robux)</button>
+    <div class="music-volume-control">
+      <label for="musicVolumeSlider">Music Volume: <span id="musicVolumeDisplay">100%</span></label>
+      <input type="range" id="musicVolumeSlider" min="0" max="100" value="100" step="1">
+    </div>
+  </div>
+  
+  <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+@keyframes evilThemeTransition {
+  0% { filter: hue-rotate(0deg) saturate(100%); }
+  50% { filter: hue-rotate(180deg) saturate(200%); }
+  100% { filter: hue-rotate(360deg) saturate(100%); }
+}
+
+body.evil-mode {
+  background-color: #1a1a1a;
+  color: #ff4444;
+  animation: evilThemeTransition 10s infinite alternate;
+}
+
+body.evil-mode .container {
+  background-color: #2a2a2a;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+body.evil-mode #shopSidebar, 
+body.evil-mode #progressSidebar {
+  background-color: #333;
+  color: #ff4444;
+}
+
+body.evil-mode .shop-item {
+  border-color: #600;
+  background-color: #2a2a2a;
+}
+
+body.evil-mode .buy-item {
+  background-color: #8b0000;
+}
+
+body.evil-mode .sell-item {
+  background-color: #660000;
+}
+
+body.evil-mode button {
+  background-color: #8b0000 !important;
+  color: #ff4444;
+}
+
+body.evil-mode button:hover {
+  background-color: #660000 !important;
+}
+
+body.evil-mode #creditsDialog, 
+body.evil-mode #customGameDialog {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.evil-mode #creditsDialog .modal-content, 
+body.evil-mode #customGameDialog .modal-content {
+  background-color: #1a1a1a;
+  color: #ff4444;
+  border-color: #600;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+body.evil-mode #creditsDialog .close-credits, 
+body.evil-mode #customGameDialog .close-custom-game {
+  color: #ff4444;
+}
+
+body.evil-mode #creditsDialog .close-credits:hover, 
+body.evil-mode #customGameDialog .close-custom-game:hover {
+  color: #ff7777;
+}
+
+body.evil-mode .custom-game-options label {
+  color: #ff4444;
+}
+
+body.evil-mode .custom-game-options input {
+  background-color: #2a2a2a;
+  border-color: #600;
+  color: #ff4444;
+}
+
+body.evil-mode .custom-game-options input:focus {
+  border-color: #ff4444;
+  box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
+}
+
+body.evil-mode .custom-game-options input[type="range"]::-webkit-slider-runnable-track {
+  background: #600;
+}
+
+body.evil-mode .custom-game-options input[type="range"]::-webkit-slider-thumb {
+  background: #ff4444;
+}
+
+#themeSwitchButton {
+  position: relative;
+}
+
+#themeSwitchButton::before {
+  content: '☀️';
+  position: absolute;
+  left: 10px;
+  transition: transform 0.3s ease;
+}
+
+#themeSwitchButton::after {
+  content: '🌙';
+  position: absolute;
+  right: 10px;
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode #themeSwitchButton::before {
+  transform: translateX(-150%);
+}
+
+body.dark-mode #themeSwitchButton::after {
+  transform: translateX(50%);
+}
+
+body.evil-mode #themeSwitchButton::before,
+body.evil-mode #themeSwitchButton::after {
+  content: '👿';
+}
+
+#themeSwitchButton span {
+  z-index: 1;
+  position: relative;
+}

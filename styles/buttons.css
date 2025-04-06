@@ -1,0 +1,203 @@
+#workButton, #robuxButton, #robux1100Button, 
+#robux2200Button, #robux5800Button, #robux12100Button, 
+#robux26400Button, #workUpgradeButton, #singlePlayerBtn, 
+#singleCPUBtn, #backToMenuButton, #themeSwitchButton, 
+#musicToggleButton, #multiPlayerBtn, #saveProgressButton, 
+#loadProgressButton, #closeMultiplayerDialog, #creditsBtn, 
+#customGameBtn, #startCustomGameButton {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Button Colors */
+#workButton { background-color: #4CAF50; }
+#robuxButton { background-color: #3498db; }
+#robux1100Button { background-color: #9b59b6; }
+#robux2200Button { background-color: #e74c3c; }
+#robux5800Button { background-color: #1abc9c; }
+#robux12100Button { background-color: #f39c12; }
+#robux26400Button { background-color: #34495e; }
+#workUpgradeButton { background-color: #e67e22; }
+#singlePlayerBtn, #singleCPUBtn, #multiPlayerBtn { background-color: #3498db; }
+#saveProgressButton, #loadProgressButton { background-color: #28a745; }
+#closeMultiplayerDialog { background-color: #3498db; }
+#backToMenuButton {
+  background-color: #6c757d; 
+}
+#musicToggleButton {
+  background-color: #17a2b8; 
+}
+#creditsBtn {
+  background-color: #6c757d; 
+}
+#customGameBtn {
+  background-color: #8e44ad; 
+}
+#startCustomGameButton {
+  background-color: #8e44ad; 
+}
+#themeSwitchButton {
+  background-color: #6c757d;  
+}
+
+/* Hover States */
+#workButton:hover { background-color: #45a049; }
+#robuxButton:hover { background-color: #2980b9; }
+#robux1100Button:hover { background-color: #8e44ad; }
+#robux2200Button:hover { background-color: #c0392b; }
+#robux5800Button:hover { background-color: #16a085; }
+#robux12100Button:hover { background-color: #d35400; }
+#robux26400Button:hover { background-color: #2c3e50; }
+#workUpgradeButton:hover { background-color: #d35400; }
+#singlePlayerBtn:hover, #singleCPUBtn:hover, #multiPlayerBtn:hover { background-color: #2980b9; }
+#saveProgressButton:hover, #loadProgressButton:hover { background-color: #218838; }
+#closeMultiplayerDialog:hover { background-color: #2980b9; }
+#backToMenuButton:hover {
+  background-color: #555f66; 
+}
+#musicToggleButton:hover {
+  background-color: #138496; 
+}
+#creditsBtn:hover {
+  background-color: #555f66;
+}
+#customGameBtn:hover {
+  background-color: #9b59b6; 
+}
+#startCustomGameButton:hover {
+  background-color: #9b59b6; 
+}
+#themeSwitchButton:hover {
+  background-color: #555f66;  
+}
+
+/* Button Interaction Animations */
+#workButton:hover, #robuxButton:hover, #robux1100Button:hover, 
+#robux2200Button:hover, #robux5800Button:hover, #robux12100Button:hover, 
+#robux26400Button:hover, #workUpgradeButton:hover, #singlePlayerBtn:hover, 
+#singleCPUBtn:hover, #backToMenuButton:hover, #themeSwitchButton:hover, 
+#musicToggleButton:hover, #multiPlayerBtn:hover, #saveProgressButton:hover, 
+#loadProgressButton:hover, #closeMultiplayerDialog:hover, #creditsBtn:hover, 
+#customGameBtn:hover, #startCustomGameButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+#workButton:active, #robuxButton:active, #robux1100Button:active, 
+#robux2200Button:active, #robux5800Button:active, #robux12100Button:active, 
+#robux26400Button:active, #workUpgradeButton:active, #singlePlayerBtn:active, 
+#singleCPUBtn:active, #backToMenuButton:active, #themeSwitchButton:active, 
+#musicToggleButton:active, #multiPlayerBtn:active, #saveProgressButton:active, 
+#loadProgressButton:active, #closeMultiplayerDialog:active, #creditsBtn:active, 
+#customGameBtn:active, #startCustomGameButton:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Button Click Effect */
+#workButton::before, #robuxButton::before, #robux1100Button::before, 
+#robux2200Button::before, #robux5800Button::before, #robux12100Button::before, 
+#robux26400Button::before, #workUpgradeButton::before, #singlePlayerBtn::before, 
+#singleCPUBtn::before, #backToMenuButton::before, #themeSwitchButton::before, 
+#musicToggleButton::before, #multiPlayerBtn::before, #saveProgressButton::before, 
+#loadProgressButton::before, #closeMultiplayerDialog::before, #creditsBtn::before, 
+#customGameBtn::before, #startCustomGameButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.2);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#workButton:active::before, #robuxButton:active::before, #robux1100Button:active::before, 
+#robux2200Button:active::before, #robux5800Button:active::before, #robux12100Button:active::before, 
+#robux26400Button:active::before, #workUpgradeButton:active::before, #singlePlayerBtn:active::before, 
+#singleCPUBtn:active::before, #backToMenuButton:active::before, #themeSwitchButton:active::before, 
+#musicToggleButton:active::before, #multiPlayerBtn:active::before, #saveProgressButton:active::before, 
+#loadProgressButton:active::before, #closeMultiplayerDialog:active::before, #creditsBtn:active::before, 
+#customGameBtn:active::before, #startCustomGameButton:active::before {
+  width: 200%;
+  height: 200%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Ensure dark mode colors are maintained */
+body.dark-mode #backToMenuButton {
+  background-color: #6c757d;
+}
+
+body.dark-mode #musicToggleButton {
+  background-color: #17a2b8;
+}
+
+body.dark-mode #creditsBtn {
+  background-color: #6c757d;
+}
+
+body.dark-mode #customGameBtn {
+  background-color: #8e44ad;
+}
+
+body.dark-mode #startCustomGameButton {
+  background-color: #8e44ad;
+}
+
+.music-volume-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.music-volume-control label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.music-volume-control input[type="range"] {
+  width: 80%;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.music-volume-control input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+.music-volume-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #3498db;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+body.dark-mode .music-volume-control input[type="range"]::-webkit-slider-runnable-track {
+  background: #666;
+}
+
+body.dark-mode .music-volume-control input[type="range"]::-webkit-slider-thumb {
+  background: #2980b9;
+}
