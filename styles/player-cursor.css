@@ -1,0 +1,74 @@
+.cursor-fx {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  z-index: 9998;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  animation: cursorTrail 1s linear forwards;
+}
+
+@keyframes cursorTrail {
+  0% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+#playerCursor {
+  transition: transform 0.12s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#playerCursor.clicking .cursor-ring {
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0.9;
+  border-color: var(--accent-color);
+}
+
+#playerCursor.clicking .cursor-dot {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: var(--accent-color);
+}
+
+#playerCursor.hovering .cursor-ring {
+  transform: translate(-50%, -50%) scale(1.5);
+  border-color: var(--secondary-color);
+}
+
+#playerCursor.hovering .cursor-dot {
+  background: var(--secondary-color);
+}
+
+/* Cursor trail intensity increases during battle */
+body.battle-active .cursor-fx {
+  opacity: 0.8;
+  animation-duration: 1.5s;
+}
+
+body.evil-mode #playerCursor .cursor-ring {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+body.evil-mode #playerCursor .cursor-dot {
+  background: var(--accent-color);
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+/* Add pulse animation to cursor */
+@keyframes cursorPulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.cursor-ring {
+  animation: cursorPulse 2s infinite ease-in-out;
+}

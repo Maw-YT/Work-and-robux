@@ -1,0 +1,226 @@
+#multiplayerDialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.multiplayer-popup {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body.dark-mode #multiplayerDialog {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .multiplayer-popup {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+#creditsDialog, #customGameDialog {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.7) translateY(50px);
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.05) translateY(-10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+  50% {
+    transform: scale(1.05) translateY(-10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.7) translateY(50px);
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+}
+
+.modal-content {
+  background-color: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(8px);
+  margin: 10% auto;
+  padding: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  position: relative;
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  overflow: hidden;
+}
+
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  z-index: 1;
+}
+
+.modal-content.pop-out {
+  animation: popOut 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.close-credits, .close-custom-game {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-credits:hover, .close-custom-game:hover {
+  color: #333;
+}
+
+.custom-game-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.custom-game-options label {
+  text-align: left;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.custom-game-options input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-game-options input:focus {
+  outline: none;
+  border-color: #8e44ad;
+  box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.1);
+}
+
+.custom-game-options .cpu-mode-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+.custom-game-options .cpu-mode-option input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+.custom-game-options input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.custom-game-options input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+.custom-game-options input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #8e44ad;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+body.dark-mode #creditsDialog, body.dark-mode #customGameDialog {
+  background-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .modal-content {
+  background-color: #333;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+body.dark-mode .custom-game-options label {
+  color: #ddd;
+}
+
+body.dark-mode .custom-game-options input {
+  background-color: #444;
+  border-color: #666;
+  color: #f0f0f0;
+}
+
+body.dark-mode .custom-game-options input:focus {
+  border-color: #9b59b6;
+  box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.1);
+}
+
+body.dark-mode .custom-game-options .cpu-mode-option {
+  color: #f0f0f0;
+}
+
+body.dark-mode .custom-game-options input[type="range"]::-webkit-slider-runnable-track {
+  background: #666;
+}
+
+body.dark-mode .custom-game-options input[type="range"]::-webkit-slider-thumb {
+  background: #9b59b6;
+}

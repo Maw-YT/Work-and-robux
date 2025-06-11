@@ -1,0 +1,68 @@
+.number-indicator {
+  position: fixed;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  pointer-events: none;
+  z-index: 2000;
+  opacity: 0;
+  transform: translateY(0);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  animation: float-away 1.5s ease-out forwards;
+}
+
+.number-indicator.positive {
+  color: #4caf50;
+}
+
+.number-indicator.negative {
+  color: #f44336;
+}
+
+.number-indicator.robux {
+  color: #ff9800;
+}
+
+@keyframes float-away {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.8);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-40px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.8);
+  }
+}
+
+body.dark-mode .number-indicator.positive {
+  color: #6eff6e;
+}
+
+body.dark-mode .number-indicator.negative {
+  color: #ff6b6b;
+}
+
+body.dark-mode .number-indicator.robux {
+  color: #ffb74d;
+}
+
+body.evil-mode .number-indicator.positive {
+  color: #ff5722;
+}
+
+body.evil-mode .number-indicator.negative {
+  color: #ff1744;
+}
+
+body.evil-mode .number-indicator.robux {
+  color: #ff9100;
+}
+
